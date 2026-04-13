@@ -1,0 +1,94 @@
+.validator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.validator-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.validator-form-label {
+  font-family: 'Geist Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.validator-form-input {
+  width: 100%;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.validator-form-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.validator-form-input:focus {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.3);
+}
+
+.validator-form-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.validator-form-error {
+  color: var(--error);
+  font-size: 13px;
+  font-family: 'Geist Sans', sans-serif;
+  margin: 0;
+}
+
+.validator-form-button {
+  background: #fff;
+  color: #000;
+  font-family: 'Geist Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.validator-form-button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.validator-form-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.validator-form-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
