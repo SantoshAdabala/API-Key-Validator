@@ -2,6 +2,24 @@
 
 A web app that lets you quickly test whether your AI provider API keys are working. Paste in a key, pick a provider, and get instant feedback on validity.
 
+---
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Express](https://img.shields.io/badge/Express-4.x-000000?style=flat-square&logo=express&logoColor=white)](https://expressjs.com)
+[![Vitest](https://img.shields.io/badge/Vitest-Tests-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev)
+
+[![OpenAI](https://img.shields.io/badge/OpenAI-Supported-412991?style=flat-square&logo=openai&logoColor=white)](https://openai.com)
+[![Anthropic](https://img.shields.io/badge/Anthropic-Supported-D97706?style=flat-square)](https://anthropic.com)
+[![Google Gemini](https://img.shields.io/badge/Gemini-Supported-4285F4?style=flat-square&logo=googlegemini&logoColor=white)](https://ai.google.dev)
+[![xAI](https://img.shields.io/badge/xAI%20Grok-Supported-000000?style=flat-square)](https://x.ai)
+
+[![Last Commit](https://img.shields.io/github/last-commit/SantoshAdabala/API-Key-Validator?style=flat-square&color=64748B)](https://github.com/SantoshAdabala/API-Key-Validator/commits/main)
+[![Stars](https://img.shields.io/github/stars/SantoshAdabala/API-Key-Validator?style=flat-square&color=FBBF24)](https://github.com/SantoshAdabala/API-Key-Validator/stargazers)
+
+---
+
 ## Supported Providers
 
 - **OpenAI** — validates via `/v1/models`, with tier/plan detection
@@ -40,48 +58,14 @@ npm run dev:server
 npm run dev:client
 ```
 
-### Production Build
+### Test
 
 ```bash
-npm run build:client
-npm run build:server
+npm test
 ```
 
-The Express server serves the built frontend from `dist/client`.
-
-## Testing
+### Build
 
 ```bash
-npm test              # run all tests
-npm run test:unit     # unit tests only
-npm run test:property # property-based tests only
+npm run build
 ```
-
-## Project Structure
-
-```
-src/
-├── client/           # React frontend
-│   ├── components/   # ValidatorForm, ProviderSelect, ValidationResult
-│   └── styles/       # Global styles
-├── server/           # Express backend
-│   ├── providers/    # Provider adapters (OpenAI, Anthropic, Google, xAI)
-│   └── routes/       # API routes
-└── shared/           # Shared TypeScript types
-```
-
-## How It Works
-
-1. The frontend fetches available providers from `GET /api/providers`
-2. User selects a provider and enters an API key
-3. The key is sent to `POST /api/validate`
-4. The backend uses the provider's adapter to make a lightweight API call and determine if the key is valid
-5. For OpenAI, it also attempts to detect the account tier/plan
-
-## Adding a Provider
-
-Create a new file in `src/server/providers/` that implements the `ProviderConfig` interface and calls `registerProvider()`. The provider will automatically appear in the frontend dropdown.
-
-## License
-
-MIT
