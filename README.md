@@ -22,10 +22,10 @@ A web app that lets you quickly test whether your AI provider API keys are worki
 
 ## Supported Providers
 
-- **OpenAI** — validates via `/v1/models`, with tier/plan detection
-- **Anthropic (Claude)** — validates via `/v1/messages`
-- **Google (Gemini)** — validates via Generative Language API
-- **xAI (Grok)** — validates via `/v1/models`, handles credit-related edge cases
+- **OpenAI** - validates via `/v1/models`, with tier/plan detection
+- **Anthropic (Claude)** - validates via `/v1/messages`
+- **Google (Gemini)** - validates via Generative Language API
+- **xAI (Grok)** - validates via `/v1/models`, handles credit-related edge cases
 
 ## Tech Stack
 
